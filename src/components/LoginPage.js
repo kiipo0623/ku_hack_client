@@ -6,6 +6,8 @@ import { Link} from 'react-router-dom';
 
 
 function LoginPage() {
+    const URL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/user/login';
+    const TESTURL = 'https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/user/login';
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
 
@@ -17,7 +19,7 @@ function LoginPage() {
         setPassword(event.target.value);
     }
 
-    const onClickLogin = async(event) => {
+    const onClickLogin = (event) => {
         event.preventDefault();
         console.log('click');
         const payload = {
@@ -25,7 +27,7 @@ function LoginPage() {
             user_password: password,
         }
 
-        await axios.get('https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/user/login/',
+        axios.get(URL,
         {params: {user_id: id, user_password: password}}
         )
         .then((res) => {
@@ -34,6 +36,8 @@ function LoginPage() {
         .catch((err) => {
             console.log(err);
         });
+
+        // window.location.href = "/matching"; 
     }
 
     const onClickJoin = () => {

@@ -4,3 +4,69 @@ body {
     background-position: top center;
     background-size: cover;
   }
+
+  .RectDesign { 
+    position: relative;
+    width: 32em;
+    height: 6em;
+    left: 0em;
+    top: 25em;
+
+background: rgba(211, 212, 214, 0.63);
+border-radius: 0px 40px 40px 0px;
+}
+
+.Logo {
+    position: absolute;
+    top:0.5em;
+    left:16em;
+}
+
+.Name {
+    position: absolute;
+    top:0.5em;
+    left:33em;
+}
+
+.TextU{
+    position: relative;
+    width: 61px;
+    height: 32px;
+    left: 750px;
+    top: 25px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 33px;
+
+color: #000000;
+}
+
+.TextD{
+    position: relative;
+    width: 150px;
+    height: 32px;
+    left: 750px;
+    top: 0px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 33px;
+
+color: #000000;
+}
+
+.Block {
+    position: relative;
+    width: 644px;
+    height: 756px;
+    left: 80em;
+    top: 1em;
+
+background: rgba(236, 236, 236, 0.63);
+border-radius: 20px;
+}

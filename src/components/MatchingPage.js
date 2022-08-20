@@ -2,16 +2,19 @@ import axios from 'axios';
 import { useState } from 'react';
 
 function MatchingPage() {
-    const URL = 'https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/matching/';
+    const WELLURL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/matching/well_fit';
+    const NOTURL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/matching/not_fit';
+    const TESTURL = 'https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/matching';
 
-    const [region, setRegion] = useState("");
+    const [university, setUniversity] = useState("");
     const [gender, setGender] = useState("");
     const [min_n, setMin] = useState("");
     const [max_n, setMax] = useState("");
-    const [type, setType] = useState("");
+    const tempunivs = ["korea", "seoul", "yeonsei", "hanyang", "iwha"];
+    // 대학 바꾸기
 
-    const onRegionHandler = (event) => {
-        setRegion(event.target.value);
+    const onUniversityHandler = (event) => {
+        setUniversity(event.target.value);
     }
 
     const onGenderHandler = (event) => {
@@ -26,28 +29,34 @@ function MatchingPage() {
         setMax(event.target.value);
     }
 
-    const onTypeHandler = (event) => {
-        setType(event.target.value);
-    }
-
     const onClick = async(event) => {
-        event.preventDefault();
+        event.prevenxtDefault();
         
-        await axios.get(URL, 
-        {params: {matching_type:type, min_n: min_n, max_n: max_n, gender: gender, region: region}})
+        await axios.get(TESTURL, 
+        {params: {min_n: min_n, max_n: max_n, gender: gender, university: university}})
         .then((res) => {
+            console.log("OK");
             console.log(res);
         })
         .catch((err) => {
             console.log(err);
         });
+
+        await axios.get(NOTURL, 
+            {params: {min_n: min_n, max_n: max_n, gender: gender, university: tempunivs}})
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     return (
         <>
             <form>
-            <p>지역</p>
-            <input type="text" name="region" value={region} onChange={onRegionHandler}></input>
+            <p>대학</p>
+            <input type="text" name="university" value={university} onChange={onUniversityHandler}></input>
 
             <p>성별</p>
             <input type="text" name="gender" value={gender} onChange={onGenderHandler}></input>
@@ -56,8 +65,6 @@ function MatchingPage() {
             <input type="number" name="min_n" value={min_n} onChange={onMinHandler}></input>
             <input type="number" name="max_n" value={max_n} onChange={onMaxHandler}></input>
             
-            <p>선택, 랜덤</p>
-            <input type="text" name="password" value={type} onChange={onTypeHandler}></input>
             
             <button type="submit" onClick={onClick}>제출</button>
             </form>

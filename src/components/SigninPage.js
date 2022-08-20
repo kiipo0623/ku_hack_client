@@ -1,16 +1,19 @@
 import axios from 'axios';
 import { useState } from 'react';
+import styles from '../styles/SigninPage.module.css';
+
 
 function SigninPage() {
-    const URL = 'https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io';
+    const URL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/user/register';
 
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
     const [university, setUniv] = useState("");
     const [mbti, setMbti] = useState("");
-    const [name, setName] = useState("");
+    const [nickName, setNickName] = useState("");
     const [studentNumber, setStudentNum] = useState("");
     const [description, setDescription] = useState("");
+    const [gender, setGender] = useState("");
 
     const onIdHandler = (event) => {
         setId(event.target.value);
@@ -28,8 +31,8 @@ function SigninPage() {
         setMbti(event.target.value);
     }
 
-    const onNameHandler = (event) => {
-        setName(event.target.value);
+    const onNickNameHandler = (event) => {
+        setNickName(event.target.value);
     }
 
     const onStudentNumHandler = (event) => {
@@ -38,6 +41,10 @@ function SigninPage() {
 
     const onDescriptionHandler = (event) => {
         setDescription(event.target.value);
+    }
+
+    const onGenderHandler = (event) => {
+        setGender(event.target.value);
     }
 
     const onClick = async(event) => {
@@ -50,10 +57,11 @@ function SigninPage() {
             mbti: mbti,
             student_number: studentNumber,
             description: description,
-            name: name,
+            nickname: nickName,
+            gender: gender,
         }
 
-        await axios.post('https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/user/register', payload)
+        await axios.post(URL, payload)
         .then((res) => {
             console.log(res);
         })
@@ -64,31 +72,48 @@ function SigninPage() {
 
     return (
         <div>
-            <form>
-                <p>이름</p>
-                <input type="text" name="name"  value={name} onChange={onNameHandler}></input>
+            <div className={styles.RectDesign}> 
+                <div className={styles.Logo}>
+                    <img src={ require('../assets/images/login/logo.png')}/>
+                </div>
+                <div className={styles.Name}>
+                    <img src={ require('../assets/images/login/MTM.png')}/>
+                </div>
+                <p className={styles.TextU}>맨투맨</p>
+                <p className={styles.TextD}>MBTI to MBTI</p>
+            </div>
 
-                <p>아이디</p>
-                <input type="text" name="id"  value={id} onChange={onIdHandler}></input>
+            <div className={styles.Block}>
+                
+                <p className={styles.IdText}>아이디</p>
+                <input type="text" className={styles.Id} name="id"  value={id} onChange={onIdHandler}></input>
 
-                <p>비밀번호</p>
-                <input type="text" name="password" value={password} onChange={onPasswordHandler}></input>
+                <p className={styles.PwText}>비밀번호</p>
+                <input type="text" name="password" className={styles.Pw} value={password} onChange={onPasswordHandler}></input>
 
-                <p>학교</p>
-                <input type="text" name="univ" value={university} onChange={onUnivHandler}></input>
+                <p className={styles.NickNameText}>닉네임</p>
+                <input type="text" className={styles.NickName} name="nickName"  value={nickName} onChange={onNickNameHandler}></input>
 
-                <p>학번</p>
-                <input type="text" name="univ" value={studentNumber} onChange={onStudentNumHandler}></input>
+                <p className={styles.GenderText}>성별</p>
+                <input type="text" className={styles.Gender} name="gender" value={gender} onChange={onGenderHandler}></input>
 
-                <p>설명</p>
-                <input type="text" name="univ" value={description} onChange={onDescriptionHandler}></input>
+                <p className={styles.UnivText}>학교</p>
+                <input type="text" name="univ" className={styles.Univ} value={university} onChange={onUnivHandler}></input>
 
-                <p>mbti</p>
-                <input type="text" name="univ" volumn={mbti} onChange={onMbtiHandler}></input>
+                <p className={styles.StudNumText}>학번</p>
+                <input type="text" name="univ" className={styles.StudNum} value={studentNumber} onChange={onStudentNumHandler}></input>
 
+                <p className={styles.MbtiText}>mbti</p>
+                <input type="text" name="univ" className={styles.Mbti} volumn={mbti} onChange={onMbtiHandler}></input>
+
+                <p className={styles.DescText}>설명</p>
+                <input type="text" name="univ" className={styles.Desc} value={description} onChange={onDescriptionHandler}></input>
+
+                
 
                 <button type="submit" onClick={onClick}>제출</button>
-            </form>
+            </div>
+
         </div>
     );
 }
