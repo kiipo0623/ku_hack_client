@@ -1,0 +1,56 @@
+.Logo {
+    position: relative;
+    width: 258.72px;
+    height: 95px;
+    left:1000px;
+    top: 113px;
+}
+
+.H1 {
+    position: relative;
+width: 269px;
+height: 44px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 44px;
+
+color: #000000;
+}
+
+.Randomtitle{
+    top: 250px;
+    left: 450px;
+}
+
+.Mytitle {
+    top:90px;
+    left: 1560px;
+}
+
+.Text {
+    position: relative;
+width: 300px;
+height: 36px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 25px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+
+
+.Randomtext {
+    top:60px;
+    left: 60px;
+}
+
+.Mytext {
+    top:60px;
+    left: 60px;
+}

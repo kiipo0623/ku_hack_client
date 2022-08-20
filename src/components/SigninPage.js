@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import styles from '../styles/SigninPage.module.css';
 import clsx from 'clsx';
+import Modal from './SigninModal';
 
 function SigninPage() {
     const URL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/user/register';
@@ -16,6 +17,7 @@ function SigninPage() {
     const [studentNumber, setStudentNum] = useState("");
     const [description, setDescription] = useState("");
     const [gender, setGender] = useState("");
+    const [modalOpen, setModalOpen] = useState(false);
 
     const onIdHandler = (event) => {
         setId(event.target.value);
@@ -66,11 +68,17 @@ function SigninPage() {
         await axios.post(URL, payload)
         .then((res) => {
             console.log(res);
+            setModalOpen(true);
+
         })
         .catch((err) => {
             console.log(err);
         });
     }
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return (
         <div>
@@ -114,6 +122,9 @@ function SigninPage() {
 
 
                 <button className={styles.Btn} type="submit" onClick={onClick}>회원가입 신청</button>
+                <Modal open={modalOpen} close={closeModal} header="Modal heading">
+                    회원가입을 축하합니다. <p></p>내 취향을 따라 떠나볼까요?
+                </Modal>
             </div>
 
         </div>
