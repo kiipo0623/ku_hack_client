@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import styles from '../styles/LoginPage.module.css';
 
 function LoginPage() {
     const [id, setId] = useState("");
@@ -21,12 +22,11 @@ function LoginPage() {
             user_password: password,
         }
 
-        const sent = await axios.get('https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/user/login',
+        await axios.get('https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/user/login/',
         {params: {user_id: id, user_password: password}}
         )
         .then((res) => {
             console.log("res", res);
-            console.log("snet", sent);
         })
         .catch((err) => {
             console.log(err);
@@ -34,17 +34,35 @@ function LoginPage() {
     }
 
     return (
-        <>
+        <body>
+        <div>
             <form>
-            <p>아이디</p>
-            <input type="text" name="id"  value={id} onChange={onIdHandler}></input>
+            <div className={styles.RectDesign}> 
+                <div className={styles.Logo}>
+                    <img src={ require('../assets/images/login/logo.png')}/>
+                </div>
+                <div className={styles.Name}>
+                    <img src={ require('../assets/images/login/MTM.png')}/>
+                </div>
+                <p className={styles.TextU}>맨투맨</p>
+                <p className={styles.TextD}>MBTI to MBTI</p>
+            </div>
 
-            <p>비밀번호</p>
-            <input type="text" name="password" value={password} onChange={onPasswordHandler}></input>
-            
+            <div className={styles.Block}>
+                <p className={styles.LoginText}>로그인</p>
+
+                <p className={styles.IDText}>아이디</p>
+                <input type="text" className={styles.Id} name="id"  value={id} onChange={onIdHandler}></input>
+
+                <p className={styles.PWText}>비밀번호</p>
+                <input type="text" name="password" value={password} onChange={onPasswordHandler}></input>
+
+            </div>
+
             <button type="submit" onClick={onClick}>제출</button>
             </form>
-        </>
+            </div>
+            </body>
         
     )
 }

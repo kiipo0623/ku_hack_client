@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useState } from 'react';
 
 function MatchingPage() {
+    const URL = 'https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/matching/';
+
     const [region, setRegion] = useState("");
     const [gender, setGender] = useState("");
     const [min_n, setMin] = useState("");
@@ -30,16 +32,9 @@ function MatchingPage() {
 
     const onClick = async(event) => {
         event.preventDefault();
-
-        const payload = {
-            region: region,
-            gender: gender,
-            min_n: min_n,
-            max_n: max_n,
-            matching_type: type
-        }
-
-        await axios.post('URL/matching', payload)
+        
+        await axios.get(URL, 
+        {params: {matching_type:type, min_n: min_n, max_n: max_n, gender: gender, region: region}})
         .then((res) => {
             console.log(res);
         })
