@@ -1,6 +1,9 @@
 body {
-    background-image: url(../assets/images/landing.png);
+    background-image: url(../assets/images/login/rectangle_grad.png);
+    
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
   }
+
+  

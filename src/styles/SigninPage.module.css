@@ -63,10 +63,160 @@ color: #000000;
 .Block {
     position: relative;
     width: 644px;
-    height: 756px;
+    height: 796px;
     left: 80em;
     top: 1em;
 
 background: rgba(236, 236, 236, 0.63);
 border-radius: 20px;
+}
+
+.Text {
+    position: relative;
+    width: 150px;
+    height: 25px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 25px;
+
+color: #000000;
+}
+
+.Id {
+    position: relative;
+left: 60px;
+top: 30px;
+}
+
+.Password {
+    position: relative;
+    left: 60px;
+    top: -15px;
+}
+
+.Nickname {
+    position: relative;
+    left: 60px;
+    top: -65px;
+}
+ 
+.Gender {
+    position: relative;
+    left: 60px;
+    top: -115px;
+}
+
+.Univ {
+    position: relative;
+    left: 60px;
+    top: -165px;
+}
+
+.Stud {
+    left: 60px;
+    top: -215px;
+}
+
+.Mbti {
+    left: 60px;
+    top: -270px;
+}
+
+.Desc {
+    left: 60px;
+    top:-315px;
+}
+
+.Input {
+    box-sizing: border-box;
+
+position: relative;
+width: 432px;
+height: 70px;
+left: 140px;
+top: 140px;
+
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.7);
+border-radius: 10px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+}
+
+.I_Id {
+    position: relative;
+    top: -30px;
+}
+
+.I_Password {
+    position: relative;
+    top: -80px;
+}
+
+.I_Nickname {
+    position: relative;
+    top: -130px;
+}
+
+.I_Gender {
+    position: relative;
+    top: -180px;
+}
+
+.I_Univ {
+    position: relative;
+    top: -230px;
+}
+
+.I_Stud {
+    position: relative;
+    top: -280px;
+}
+
+.I_Mbti {
+    position: relative;
+    top: -330px;
+}
+
+.I_Description {
+    position: relative;
+    top: -380px;
+}
+
+.JoinText {
+    position: relative;
+    width: 111px;
+    height: 44px;
+    left:275px;
+    top: 30px;
+    
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+    
+    color: #000000;
+}
+
+.Btn {
+    /* rectangle-371 */
+
+box-sizing: border-box;
+
+position: relative;
+width: 151px;
+height: 40px;
+left: -20px;
+top: -300px;
+
+border: 1px solid #5166AF;
+border-radius: 10px;
 }

@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
 import styles from '../styles/SigninPage.module.css';
-
+import clsx from 'clsx';
 
 function SigninPage() {
     const URL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/user/register';
+    const TESTURL = 'https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/user/register';
+
 
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
@@ -84,34 +86,34 @@ function SigninPage() {
             </div>
 
             <div className={styles.Block}>
+                <p className={styles.JoinText}>회원가입</p>
                 
-                <p className={styles.IdText}>아이디</p>
-                <input type="text" className={styles.Id} name="id"  value={id} onChange={onIdHandler}></input>
+                <p className={clsx(styles.Text, styles.Id)}>아이디</p>
+                <input type="text" className={clsx(styles.Input, styles.I_Id)} name="id"  value={id} onChange={onIdHandler}></input>
 
-                <p className={styles.PwText}>비밀번호</p>
-                <input type="text" name="password" className={styles.Pw} value={password} onChange={onPasswordHandler}></input>
+                <p className={clsx(styles.Text, styles.Password)}>비밀번호</p>
+                <input type="text" name="password" className={clsx(styles.Input, styles.I_Password)} value={password} onChange={onPasswordHandler}></input>
 
-                <p className={styles.NickNameText}>닉네임</p>
-                <input type="text" className={styles.NickName} name="nickName"  value={nickName} onChange={onNickNameHandler}></input>
+                <p className={clsx(styles.Text, styles.Nickname)}>닉네임</p>
+                <input type="text" className={clsx(styles.Input, styles.I_Nickname)} name="nickName"  value={nickName} onChange={onNickNameHandler}></input>
 
-                <p className={styles.GenderText}>성별</p>
-                <input type="text" className={styles.Gender} name="gender" value={gender} onChange={onGenderHandler}></input>
+                <p className={clsx(styles.Text, styles.Gender)}>성별</p>
+                <input type="text" className={clsx(styles.Input, styles.I_Gender)} name="gender" value={gender} onChange={onGenderHandler}></input>
 
-                <p className={styles.UnivText}>학교</p>
-                <input type="text" name="univ" className={styles.Univ} value={university} onChange={onUnivHandler}></input>
+                <p className={clsx(styles.Text, styles.Univ)}>소속대학</p>
+                <input type="text" name="univ" className={clsx(styles.Input, styles.I_Univ)} value={university} onChange={onUnivHandler}></input>
 
-                <p className={styles.StudNumText}>학번</p>
-                <input type="text" name="univ" className={styles.StudNum} value={studentNumber} onChange={onStudentNumHandler}></input>
+                <p className={clsx(styles.Text, styles.Stud)}>학번</p>
+                <input type="text" name="studentnumber" className={clsx(styles.Input, styles.I_Stud)} value={studentNumber} onChange={onStudentNumHandler}></input>
 
-                <p className={styles.MbtiText}>mbti</p>
-                <input type="text" name="univ" className={styles.Mbti} volumn={mbti} onChange={onMbtiHandler}></input>
+                <p className={clsx(styles.Text, styles.Mbti)}>MBTI</p>
+                <input type="text" name="mbti" className={clsx(styles.Input, styles.I_Mbti)} volumn={mbti} onChange={onMbtiHandler}></input>
 
-                <p className={styles.DescText}>설명</p>
-                <input type="text" name="univ" className={styles.Desc} value={description} onChange={onDescriptionHandler}></input>
+                <p className={clsx(styles.Text, styles.Desc)}>설명</p>
+                <input type="text" name="univ" className={clsx(styles.Input, styles.I_Description)} value={description} onChange={onDescriptionHandler}></input>
 
-                
 
-                <button type="submit" onClick={onClick}>제출</button>
+                <button className={styles.Btn} type="submit" onClick={onClick}>회원가입 신청</button>
             </div>
 
         </div>
