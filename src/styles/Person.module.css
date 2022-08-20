@@ -1,0 +1,76 @@
+.Outer{
+    box-sizing: border-box;
+
+position: relative;
+width: 340px;
+height: 250px;
+left: 260px;
+top: 480px;
+
+border: 0.5px solid rgba(0, 0, 0, 0.4);
+border-radius: 20px;
+}
+
+.Inner{
+
+    position: relative;
+    width: 340px;
+    height: 100px;
+    left: 0px;
+    top: 138px;
+    
+    background: rgba(217, 217, 217, 0.3);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.Nickname {
+    position: relative;
+width: 80px;
+height: 18px;
+left: 30px;
+top: 20px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+/* identical to box height */
+
+color: rgba(0, 0, 0, 0.4);
+}
+
+.Mbti {
+    position: relative;
+    width: 53px;
+    height: 33px;
+    left: 29px;
+    top: -5px;
+    
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    /* identical to box height */
+    
+    color: #000000;
+}
+
+.Description {
+    position: relative;
+width: 183px;
+height: 15px;
+left: 80px;
+top: 200px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 15px;
+/* identical to box height */
+
+color: rgba(0, 0, 0, 0.4);
+
+}
