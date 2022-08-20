@@ -33,7 +33,7 @@ border-radius: 0px 40px 40px 0px;
     width: 644px;
     height: 756px;
     left: 80em;
-    top: 5em;
+    top: 1em;
 
 background: rgba(236, 236, 236, 0.63);
 border-radius: 20px;
@@ -91,8 +91,8 @@ color: #000000;
     position: relative;
 width: 50px;
 height: 27px;
-left: 100px;
-top: 280px;
+left: 60px;
+top: 240px;
 
 font-family: 'Noto Sans CJK KR';
 font-style: normal;
@@ -110,20 +110,26 @@ color: #000000;
 position: relative;
 width: 432px;
 height: 70px;
-left: 130px;
-top: 210px;
+left: 140px;
+top: 170px;
 
 background: #FFFFFF;
 border: 1px solid rgba(0, 0, 0, 0.7);
 border-radius: 10px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
 }
 
 .PWText {
     position: relative;
 width: 500px;
 height: 27px;
-left: 100px;
-top: 330px;
+left: 60px;
+top: 203px;
 
 font-family: 'Noto Sans CJK KR';
 font-style: normal;
@@ -133,4 +139,62 @@ line-height: 27px;
 /* identical to box height */
 
 color: #000000;
+}
+
+.Pw {
+    box-sizing: border-box;
+
+position: relative;
+width: 432px;
+height: 70px;
+left: 140px;
+top: 140px;
+
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.7);
+border-radius: 10px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+}
+
+.LoginBtn {
+    box-sizing: border-box;
+position: relative;
+width: 151px;
+height: 40px;
+left: -180px;
+top: 270px;
+
+background: #5166AF;
+border: 1px solid #5166AF;
+border-radius: 10px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+}
+
+.JoinBtn {
+    box-sizing: border-box;
+
+position: relative;
+width: 151px;
+height: 40px;
+left: 252px;
+top: 270px;
+
+border: 1px solid #5166AF;
+border-radius: 10px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
 }

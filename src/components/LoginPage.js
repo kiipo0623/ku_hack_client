@@ -1,6 +1,9 @@
 import axios from 'axios';
+import { React } from 'react';
 import { useState } from 'react';
 import styles from '../styles/LoginPage.module.css';
+import { Link} from 'react-router-dom';
+
 
 function LoginPage() {
     const [id, setId] = useState("");
@@ -14,7 +17,7 @@ function LoginPage() {
         setPassword(event.target.value);
     }
 
-    const onClick = async(event) => {
+    const onClickLogin = async(event) => {
         event.preventDefault();
         console.log('click');
         const payload = {
@@ -33,10 +36,14 @@ function LoginPage() {
         });
     }
 
+    const onClickJoin = () => {
+        window.location.href = "/register";
+        console.log("done");
+    }
+
     return (
         <body>
         <div>
-            <form>
             <div className={styles.RectDesign}> 
                 <div className={styles.Logo}>
                     <img src={ require('../assets/images/login/logo.png')}/>
@@ -55,12 +62,13 @@ function LoginPage() {
                 <input type="text" className={styles.Id} name="id"  value={id} onChange={onIdHandler}></input>
 
                 <p className={styles.PWText}>비밀번호</p>
-                <input type="text" name="password" value={password} onChange={onPasswordHandler}></input>
+                <input type="text" className={styles.Pw} name="password" value={password} onChange={onPasswordHandler}></input>
 
+
+                <button type="submit" className={styles.LoginBtn} onClick={onClickLogin}>로그인</button>
+                <button type="submit" className={styles.JoinBtn} onClick={onClickJoin}>회원가입</button>
+            
             </div>
-
-            <button type="submit" onClick={onClick}>제출</button>
-            </form>
             </div>
             </body>
         
