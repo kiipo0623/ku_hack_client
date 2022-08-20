@@ -27,7 +27,7 @@ function LoginPage() {
             user_password: password,
         }
 
-        axios.get(URL,
+        axios.get(TESTURL,
         {params: {user_id: id, user_password: password}}
         )
         .then((res) => {
@@ -37,7 +37,7 @@ function LoginPage() {
             console.log(err);
         });
 
-        // window.location.href = "/matching"; 
+        window.location.href = "/matching"; 
     }
 
     const onClickJoin = () => {
