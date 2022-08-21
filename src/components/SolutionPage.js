@@ -68,6 +68,10 @@ function SolutionPage() {
         setModalOpen(false);
         
     };
+
+    const onClickStart = (event) => {
+        window.location.replace("https://doda.app/quiz/fUQRceXbVI");
+    }
     
 
     return (
@@ -84,7 +88,7 @@ function SolutionPage() {
                 <h1 className={clsx(styles.H1, styles.Randomtitle)}>랜덤친구 성격 맞추기</h1>
                 <h1 className={clsx(styles.H1, styles.Mytitle)}>오늘의 내 성격 테스트</h1>
                 <button className={clsx(styles.Button, styles.LeftBtn)}>START</button>
-                <button className={clsx(styles.Button, styles.RightBtn)}>START</button>
+                <button className={clsx(styles.Button, styles.RightBtn)} onClick={onClickStart}>START</button>
                 <p className={clsx(styles.Text, styles.Randomtext)}>성격을 모르는 친구와 대화하고, <br /> 재미있는 이야기를 나눠보세요.</p>
                 <p className={clsx(styles.Text, styles.Mytext)}>하루하루 달라지는 기분... <br /> 오늘의 나는 어떨까요?</p>
             </div>

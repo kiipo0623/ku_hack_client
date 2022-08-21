@@ -131,7 +131,7 @@ color: #000000;
 .NotGrid{
     position: relative;
     left: 20px;
-    top: -400px;
+    top: -300px;
     display: flex;
     justify-content: space-evenly;
 }
