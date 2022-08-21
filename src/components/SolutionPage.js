@@ -56,13 +56,13 @@ function SolutionPage() {
         }
     }
 
-    // useEffect(() => {
-    //     getWellPeople();
-    // }, [])
+    useEffect(() => {
+        getWellPeople();
+    }, [])
 
-    // useEffect(() => {
-    //     getNotPeople();
-    // }, [])
+    useEffect(() => {
+        getNotPeople();
+    }, [])
 
     const closeModal = () => {
         setModalOpen(false);
