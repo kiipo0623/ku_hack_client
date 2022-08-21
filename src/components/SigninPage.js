@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import styles from '../styles/SigninPage.module.css';
 import clsx from 'clsx';
-import Modal from './SigninModal';
+import Modal from './SigninModal.js';
 
 function SigninPage() {
     const URL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/user/register';
@@ -52,7 +52,7 @@ function SigninPage() {
     }
 
     const onClick = async(event) => {
-        event.preventDefault();
+        // event.preventDefault();
         console.log('click');
         const payload = {
             user_id: id,

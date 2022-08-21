@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function MatchingPage() {
-    const URL = 'https://95518c84-8ff5-4fa5-beb8-bdd73aa905b7.mock.pstmn.io/matching';
-    const WELLURL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/matching/well_fit';
-    const NOTURL = 'http://ec2-54-180-8-145.ap-northeast-2.compute.amazonaws.com:8080/matching/not_fit';
+    const URL = 'https://c5beee62-b012-4cbd-bd2f-a890857ef8b8.mock.pstmn.io/matching';
+    const WELLURL = 'https://c5beee62-b012-4cbd-bd2f-a890857ef8b8.mock.pstmn.io/matching/well_fit';
+    const NOTURL = 'https://c5beee62-b012-4cbd-bd2f-a890857ef8b8.mock.pstmn.io/matching/not_fit';
 
     const [university, setUniversity] = useState("");
     const [gender, setGender] = useState("");
@@ -28,20 +28,9 @@ function MatchingPage() {
         setMax(event.target.value);
     }
 
-    const onClick = async(event) => {
-        event.preventDefault();
-        
-        await axios.get(URL, 
-        {params: {min_n: min_n, max_n: max_n, gender: gender, university: tmp}})
-        .then((res) => {
-            console.log(res);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-
+    const getWell = async(event) => {
         await axios.get(WELLURL, 
-            {params: {min_n: min_n, max_n: max_n, gender: gender, university: university}})
+            {params: {min_n: min_n, max_n: max_n, gender: gender, university: tmp}})
             .then((res) => {
                 console.log(res);
             })
@@ -49,6 +38,27 @@ function MatchingPage() {
                 console.log(err);
             });
     }
+
+    const getNot = async(event) => {
+        await axios.get(NOTURL, 
+            {params: {min_n: min_n, max_n: max_n, gender: gender, university: tmp}})
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    //await 삭제 redirect
+    const onClick = async(event) => {
+        event.preventDefault();
+        getWell(event);
+        getNot(event);
+        window.location.href = "/solution"; 
+    }
+
+
 
     return (
         <>

@@ -26,8 +26,8 @@ color: #000000;
 }
 
 .Mytitle {
-    top:90px;
-    left: 1560px;
+    top:190px;
+    left: 1510px;
 }
 
 .Text {
@@ -47,10 +47,83 @@ color: rgba(0, 0, 0, 0.6);
 
 .Randomtext {
     top:60px;
-    left: 60px;
+    left: 460px;
 }
 
 .Mytext {
-    top:60px;
-    left: 60px;
+    top:0px;
+    left: 1510px;
+}
+
+.Temp {
+    position: absolute;
+    top: 2px;
+}
+
+.Button {
+    box-sizing: border-box;
+
+position: relative;
+width: 216px;
+height: 90px;
+
+
+background: rgba(255, 255, 255, 0.5);
+border: 1px solid #000000;
+box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4), inset -4px -4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.LeftBtn {
+    left: 730px;
+    top: 125px;
+}
+
+.RightBtn {
+    left: 1070px;
+    top: 125px;
+}
+
+.WellTitle {
+    position: relative;
+width: 269px;
+height: 44px;
+left: 130px;
+top: 60px;
+
+font-family: 'Noto Sans CJK KR';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 44px;
+
+color: #000000;
+}
+
+.NotTitle {
+    position: absolute;
+    width: 269px;
+    height: 44px;
+    left: 230px;
+    top: 560px;
+    
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 44px;
+    
+    color: #000000;
+}
+
+.WellGrid{
+    position: relative;
+    left: 20px;
+    top: -400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.WellBox {
+    padding: 15px;
 }

@@ -37,7 +37,7 @@ function LoginPage() {
             console.log(err);
         });
 
-        window.location.href = "/matching"; 
+        window.location.href = "/solution"; 
     }
 
     const onClickJoin = () => {

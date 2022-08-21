@@ -1,0 +1,120 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .modal button {
+    outline: none;
+    cursor: pointer;
+    border: 0;
+  }
+  .modal > section {
+    position: relative;
+    width: 644px;
+    height: 789px;
+    left: 641px;
+    right: 635px;
+    top: 0px;
+    bottom: 121px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    animation: modal-show 0.3s;
+    overflow: hidden;
+  }
+  .modal > section > main {
+    position: relative;
+    top: 400px;
+    width: 644px;
+    height: 86px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 43px;
+    text-align: center;
+    color: #000000;
+  }
+  .modal > section > main > div > img {
+    position: absolute;
+    bottom : 120px;
+    left: 250px;
+    width : 152px;
+    height : 152px;
+  }
+  .modal > section > main > img#star1 {
+    position: absolute;
+    bottom : 130px;
+    left: 200px;
+    width : 30px;
+    height : 30px;
+  }
+  .modal > section > main > img#star2 {
+    position: absolute;
+    bottom : 250px;
+    left: 420px;
+    width : 30px;
+    height : 30px;
+  }
+  .modal > section > main > img#star3 {
+    position: absolute;
+    bottom : 200px;
+    left: 440px;
+    width : 30px;
+    height : 30px;
+  }
+  .modal > section > footer {
+    position: relative;
+    top: 600px;
+    text-align: center;
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: #FFFFFF;
+  }
+  .modal > section > footer button {
+    padding:8px 59px 7px 60px;
+    background: #5166AF;
+    border: 1px solid #5166AF;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: #FFFFFF;
+  }
+  .modal.openModal {
+    display: flex;
+    align-items: center;
+    animation: modal-bg-show 0.3s;
+  }
+  @keyframes modal-show {
+    from {
+      opacity: 0;
+      margin-top: -50px;
+    }
+    to {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+  @keyframes modal-bg-show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+

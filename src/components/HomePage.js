@@ -6,7 +6,7 @@ function HomePage() {
     return (
         <body className={styles.body}>
         <div>    
-        <img src={ require('../assets/images/mbti/INFJ.png')}/>
+        {/* <img src={ require('../assets/images/mbti/INFJ.png')}/> */}
         </div>
         </body>
     )
